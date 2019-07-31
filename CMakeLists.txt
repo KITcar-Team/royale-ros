@@ -4,7 +4,7 @@ project(royale_ros)
 
 set(ROYALE_ROOT "/opt/royale" CACHE STRING "Root directory to Royale SDK")
 
-find_package(royale REQUIRED
+find_package(royale
   PATHS ${ROYALE_ROOT}/share
   )
 find_package(Boost REQUIRED)
