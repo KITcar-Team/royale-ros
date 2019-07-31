@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(royale_ros)
 
-if("$ENV{HOSTNAME}" STREQUAL "kitcarnuc")
 
-  set(ROYALE_ROOT "/opt/royale" CACHE STRING "Root directory to Royale SDK")
+set(ROYALE_ROOT "/opt/royale" CACHE STRING "Root directory to Royale SDK")
 
-  find_package(royale REQUIRED
-    PATHS ${ROYALE_ROOT}/share
-    )
-  find_package(Boost REQUIRED)
+find_package(royale REQUIRED
+  PATHS ${ROYALE_ROOT}/share
+  )
+find_package(Boost REQUIRED)
+
+if(royale_FOUND)
 
   MESSAGE(STATUS "ROYALE_ROOT: " ${ROYALE_ROOT})
   MESSAGE(STATUS "royale_LIB_DIR: " ${royale_LIB_DIR})
